@@ -31,7 +31,7 @@
       var API_KEY = 'AIzaSyCpK_xdcXQOnwNsZzr2Sb3uJN3I_qR-Nf8';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
-      var DISCOVERY_DOCS = ['https://docs.googleapis.com/$discovery/rest?version=v1'];
+      var DISCOVERY_DOCS = ['https://texttospeech.googleapis.com/$discovery/rest?version=v1'];
 
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
@@ -109,21 +109,6 @@
         pre.appendChild(textContent);
       }
 
-      /**
-       * Prints the title of a sample doc:
-       * https://docs.google.com/document/d/195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE/edit
-       */
-      function printDocTitle() {
-        gapi.client.docs.documents.get({
-        documentId: '195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE'
-      }).then(function(response) {
-        var doc = response.result;
-        var title = doc.title;
-        appendPre('Document "' + title + '" successfully found.\n');
-      },function(response) {
-        appendPre('Error: ' + response.result.error.message);
-        });
-      }
     </script>
     <script async="" defer="" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()" src="https://apis.google.com/js/api.js"></script>
     <script src="app.js"></script>
